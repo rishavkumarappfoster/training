@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML form</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+
+            <div class="addpadding">
+                <!-- primary detail -->
+                <fieldset>
+                    <legend>Primary Details</legend>
+                    <div style="margin-left:300px;">Valid Till</div>
+                    <div class="contain">
+                        <label class="left" for="medicare_no, total_no">Medicare No</label>
+                        <article class="right-flex">
+                            <input type="number" id="medicare_no" name="medicare_no" style="width:150px;">
+                            <b>/</b>
+                            <input type="number" id="total_no" name="total_no" style="width:60px;">
+                            <input type="month" textfield="mm/yyyy" style="width:150px;">
+                        </article>
+                    </div>
+                    <article class="contain">
+                        <label class="left" for="title">Title</label>
+                         <select class="right" id="title" name="title">
+                             <option value="Mr">Mr</option>
+                             <option value="Mrs">Mrs</option>
+                             <option value="None" selected>None</option>
+                         </select>
+                    </article>
+                    <div style="margin-left:300px;">Lastname, Firstname, Middlename</div>
+                    <div class="contain">
+                        <label class="left" for="name">Name</label>
+                        <input class="right" type="text" id="name" name="name">
+                    </div>
+                    <div class="dateofbirth contain">
+                        <label class="left" for="dob">DOB</label>
+                        <input class="right" type="text" id="dob" name="dob">
+                    </div>
+                    <div class="gender contain">
+                        <label class="left" for="sex">Sex</label>
+                        <article class="right">
+                            <input type="radio" id="male" value="male" name="sex">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" value="female" name="sex">
+                            <label for="female">Female</label>
+                        </article>
+                    </div>
+                    <div class="familyname contain">
+                        <label class="left" for="fname">Family Name</label>
+                        <article class="right">
+                            <input type="text" id="fname">
+                            <input style="text-align:center;" type="text" size="1" placeholder="N">
+                            <input style="text-align:center;" type="text" size="1" placeholder="I">
+                        </article>
+                    </div>
+                </fieldset>
+    
+                <!-- contact detail -->
+                <fieldset>
+                    <legend>Contact Details</legend>
+                    <div>
+                        <label style="margin-left:300px;">Home</label>
+                        <label style="margin-left:160px;">Work</label>
+                    </div>
+                    <div class="contain">
+                        <label class="left" for="home, work">Phone</label>
+                        <article class="right-flex">
+                           <input type="number" id="home" name="home">
+                           <input type="number" id="work" name="work">
+                        </article>
+                    </div>
+                    <div>
+                        <label style="margin-left:300px;">Mobile</label>
+                        <label style="margin-left:160px;">Fax</label>
+                    </div>
+                    <div class="contain">
+                        <article class="left"></article>
+                        <article class="right-flex">
+                            <input type="Number" id="mobile" name="mobile">
+                            <input type="Number" id="fax" name="fax">
+                        </article>
+                    </div>
+                    <div>
+                        <label style="margin-left:280px;">Next of Kin</label>
+                        <label style="margin-left:100px;">Next of Kin Ph:</label>
+                    </div>
+                    <div class="contain">
+                        <article class="left"></article>
+                        <article class="right-flex">
+                            <input type="Number" id="kin" name="kin">
+                            <input type="Number" id="kinph" name="kinph">
+                        </article>
+                    </div>
+                    <div class="emergency contain">
+                        <label class="left" for="emerg">Emerg. No</label>
+                        <input class="right" type="text" id="emerg" name="emerg">
+                    </div>
+                    <div class="dateofbirth contain">
+                        <label class="left" for="email">Email</label>
+                        <input class="right" type="email" id="email" name="email">
+                    </div>
+                    
+                </fieldset>
+            </div>
+
+            <!-- address -->
+            <fieldset class="addpadding">
+                <legend>Address Details</legend>
+                
+                <fieldset>
+                    <legend>Residential Details</legend>
+                    <div>
+                        <div class="contain">
+                            <label class="left" for="address1">Address 1</label>
+                            <input class="right" type="text" id="address1" name="address1">
+                        </div>
+                        <div class="contain">
+                            <label class="left" for="address2">Address 2</label>
+                            <input class="right" type="text" id="address2" name="address2">
+                        </div>
+                    </div>
+                    <div class="contain">
+                        <label class="left" for="subrub">Subrub</label>
+                        <article class="right-flex">
+                          <input type="text" id="subrub" name="subrub" style="width:150px;">
+                          <label>
+                            <label for="state">State</label>
+                            <select id="state" name="state" style="width:150px;">
+                                <option value="Bihar">Bihar</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujrat" selected>Gujrat</option>
+                            </select>
+                        </label>
+                      </article>
+                    </div>
+                    <div class="contain">
+                        <label class="left" for="postalcode">Postal Code</label>
+                            <label class="right-flex">
+                              <article>
+                                <input type="number" id="postalcode" name="postalcode" style="width:150px;">
+                                <button>?</button>
+                              </article>
+                              <label>
+                                <label for="Country">Country</label>
+                                <input type="text" name="Country" id="Country"  value="Australia" style="width:150px;">
+                            </label>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Single Address</legend>
+                    <p style="padding:15px;">Are Mailing Address and Residental Address same?  
+                    <input type="checkbox" id="issame" value="yes">
+                    <label for="issame">Yes</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Mailing Address</legend>
+                    <div>
+                        <div class="contain">
+                            <label class="left" for="address1">Address 1</label>
+                            <input class="right" type="text" id="address1" name="address1">
+                        </div>
+                        <div class="contain">
+                            <label class="left" for="address2">Address 2</label>
+                            <input class="right" type="text" id="address2" name="address2">
+                        </div>
+                    </div>
+                    <div class="contain">
+                        <label class="left" for="subrub">Subrub</label>
+                        <article class="right-flex">
+                          <input type="text" id="subrub" name="subrub" style="width:150px;">
+                          <label>
+                            <label for="state">State</label>
+                            <select id="state" name="state" style="width:150px;">
+                                <option value="Bihar">Bihar</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujrat" selected>Gujrat</option>
+                            </select>
+                        </label>
+                      </article>
+                    </div>
+                    <div class="contain">
+                        <label class="left" for="postalcode">Postal Code</label>
+                            <label class="right-flex">
+                              <article>
+                                <input type="number" id="postalcode" name="postalcode" style="width:150px;">
+                                <button>?</button>
+                              </article>
+                              <label>
+                                <label for="Country">Country</label>
+                                <input type="text" name="Country" id="Country"  value="Australia" style="width:150px;">
+                            </label>
+                        </label>
+                    </div>
+                </fieldset>
+
+
+            </fieldset>
+
+            <div class="extra Util-flex-column">
+                <div class="contain Util-mg-top-1">
+                    <label class="left" for="ihinumber">IHI Number</label>
+                    <label class="right padding-0">
+                        <label style="margin-right: 6.9px;">80036</label>
+                        <input class="padding-5" type="Text" id="ihinumber" size="40">
+                    </label>
+                </div>
+                <div class="contain">
+                    <label class="left" for="numsatus">Number Status</label>
+                    <input class="right" type="text" id="numsatus" size="50">
+                </div>
+                <div class="contain">
+                    <label class="left" for="recordsta">Record Status</label>
+                    <input class="right" type="text" id="recordsta" size="50">
+                </div>
+                <div class="contain">
+                    <label class="left" for="lastupd">Last Update</label>
+                    <input class="right" type="text" id="lastupd" size="50">
+                </div>
+            </div>
+            <div class="Util-center Util-mg-top-2-5 Util-mg-bottom-1">
+                <button class="Util-button" type="submit">Submit</button>
+                <button class="Util-button" type="reset">Clear</button>
+            </div>
+
+
+    
+        </form>
+    </div>
+</body>
+</html>
