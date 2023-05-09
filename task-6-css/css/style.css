@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Montserrat:ital,wght@0,300;0,700;1,500&display=swap');
+/* *{
+	margin-top: 0;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+} */
+
+/* Variables */
+
+:root{
+
+  /* font size */
+  --big-font-size: 2rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .70rem;
+
+  /* font weight */
+  --font-medium:500;
+  --font-semi-bold:600;
+
+  /* Margeness */
+--mb-0-25: .25rem;
+--mb-0-5: .5rem;
+--mb-0-75: .75rem;
+--mb-1: 1rem;
+--mb-1-5: 1.5rem;
+--mb-2: 2rem;
+--mb-2-5: 2.5rem;
+--mb-3: 3rem;
+}
+
+
+/* Utility classes */
+/* Using this class wherever needed */
+/* Util name added before the class name, denotes that this classes are utility classes */
+
+.Util-mg-top-1{
+	margin-top: var(--mb-1);
+}
+.Util-mg-left-0-1{
+	margin-left: var(--mb-1);
+}
+.Util-mg-left-0-5{
+	margin-left: var(--mb-0-5);
+}
+.Util-mg-top-1{
+	margin-top: var(--mb-1);
+}
+.Util-mg-top-1-5{
+	margin-top: var(--mb-1-5);
+}
+.Util-mg-top-2{
+	margin-top: var(--mb-2);
+}
+.Util-mg-top-2-5{
+	margin-top: var(--mb-2-5);
+}
+.Util-mg-top-3{
+	margin-top: var(--mb-3);
+}
+.Util-mg-bottom-0-5{
+	margin-bottom: var(--mb-0-5);
+}
+.Util-mg-bottom-1{
+	margin-bottom: var(--mb-1);
+}
+.Util-flex-row{
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+}
+.Util-flex-column{
+	display: flex;
+	flex-direction: column;
+}
+.Util-flex-row-sp{
+    display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border:2px solid blue; */
+}
+.Util-heading1{
+  font-size: var(--h1-font-size);
+}
+.Util-heading3{
+   font-size:1.2rem;
+   text-transform: uppercase;
+   font-weight:700;
+   color:#2d7788;
+}
+.Util-para{
+	font-size: var(--smaller-font-size);
+	letter-spacing: 0px;
+    line-height: 1.2rem;
+    /* border: 2px solid black; */
+}
+.right-para{
+    /* 		border: 2px solid black; */
+          font-size: var(--small-font-size);
+        /* letter-spacing: 1px;
+        line-height: 1.2rem; */
+        font-weight: var(--font-semi-bold);
+}
+.Util-green{
+	font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+    color:#2d7788;
+}
+.Util-grey{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    color:grey;
+}
+.Util-designation{
+   font-size: var(--h3-font-size);
+}
+.Util-small-bold{
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-semi-bold);
+}
+.Util-circle{
+    background:#2d7788;
+    border-radius: 25px;
+    width:25px;
+    height:25px;
+    text-align:center;
+}
+.Util-circle i{
+    line-height:25px;
+}
+
+/* Utility class end here */
+
+
+body{
+	display: flex;
+	justify-content: center;
+
+}
+.container{
+    margin:3rem 0;
+	width: 1040px;
+	/* border: 2px solid black; */
+    box-shadow:0 0 3px 1px black;
+	/* padding: 3rem; */
+    display:flex;
+    flex-direction: row;
+    
+}
+
+/* left container */
+
+.left-container{
+    width:68%;
+    /* border:2px solid black; */
+    padding:3.5rem;
+}
+.right-container{
+    width:32%;
+    /* border:2px solid rgb(151, 46, 46); */
+    color:#fff;
+}
+.scale{
+    width:65%;
+    height:13px;
+    background:#f2f2f2;
+}
+.scale_measure{
+    width:90%;
+    height:100%;
+    background:#5A42C0;
+}
+.scale_measure.scalewidth{
+    width:60%;
+}
+
+/* right container */
+.right-container .intro{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:1.6rem;
+    background:#48359A;
+}
+.right-container .image-container{
+    width:8rem;
+    height:8rem;
+    border-radius:8rem;
+    background:grey;
+    overflow:hidden;
+}
+.right-container .image-container img{
+    width:8rem;
+    height:10rem;
+    object-fit:cover;
+}
+.intro h1{
+    color:#FFFFFF;
+}
+.otherinfo{
+    padding:1.6rem;
+    background:#5A42C0;
+}
+.user-link{
+    text-decoration: none;
+    font-size: var(--smaller-normal-size);
+    color:#fff;
+}
+.otherinfo .profile-links{
+    /* border:2px solid #fff; */
+    margin-bottom:3rem;
+}
+.otherinfo .profile-links article{
+    /* border:2px solid #fff; */
+    margin-bottom:1rem;
+}
+.normaltext-bold{
+    font-size:0.9rem;
+    font-weight:600;
+    margin-bottom: 0.5rem;
+}
+.normaltext{
+    font-size:0.9rem; 
+}
+.profile-links article i{
+    margin-right:4px;
+}
+
+
+
+
