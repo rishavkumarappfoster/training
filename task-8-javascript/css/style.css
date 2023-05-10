@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;700&family=Montserrat:ital,wght@0,300;0,700;1,500&display=swap');
+*{
+	margin-top: 0;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Variables */
+
+:root{
+
+  /* font size */
+  --big-font-size: 2rem;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .70rem;
+
+  /* font weight */
+  --font-medium:500;
+  --font-semi-bold:600;
+
+  /* Margeness */
+--mb-0-25: .25rem;
+--mb-0-5: .5rem;
+--mb-0-75: .75rem;
+--mb-1: 1rem;
+--mb-1-5: 1.5rem;
+--mb-2: 2rem;
+--mb-2-5: 2.5rem;
+--mb-3: 3rem;
+}
+
+
+/* Utility classes */
+/* Using this class wherever needed */
+/* Util name added before the class name, denotes that this classes are utility classes */
+
+.Util-mg-top-0-1{
+	margin-top: var(--mb-0-75);
+}
+.Util-mg-left-0-1{
+	margin-left: var(--mb-1);
+}
+.Util-mg-left-0-5{
+	margin-left: var(--mb-0-5);
+}
+.Util-mg-top-1{
+	margin-top: var(--mb-1);
+}
+.Util-mg-top-1-5{
+	margin-top: var(--mb-1-5);
+}
+.Util-mg-top-2{
+	margin-top: var(--mb-2);
+}
+.Util-mg-top-2-5{
+	margin-top: var(--mb-2-5);
+}
+.Util-mg-top-3{
+	margin-top: var(--mb-3);
+}
+.Util-mg-bottom-0-5{
+	margin-bottom: var(--mb-0-5);
+}
+.Util-mg-bottom-1{
+	margin-bottom: var(--mb-1);
+}
+.Util-flex-row{
+	display: flex;
+	flex-direction: row;
+    align-items: center;
+}
+.Util-flex-column{
+	display: flex;
+	flex-direction: column;
+}
+.Util-flex-row-sp{
+    display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border:2px solid blue; */
+}
+.Util-heading1{
+  font-size: var(--h1-font-size);
+}
+.Util-heading3{
+   font-size:1.2rem;
+   text-transform: uppercase;
+   font-weight:700;
+   color:#2d7788;
+}
+.Util-para{
+	font-size: var(--normal-font-size);
+	letter-spacing: 0px;
+    line-height: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    /* border: 2px solid black; */
+}
+.right-para{
+    /* 		border: 2px solid black; */
+          font-size: var(--small-font-size);
+        /* letter-spacing: 1px;
+        line-height: 1.2rem; */
+        font-weight: var(--font-semi-bold);
+}
+.Util-green{
+	font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+    color:#2d7788;
+}
+.Util-grey{
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    color:grey;
+}
+.Util-designation{
+   font-size: var(--h3-font-size);
+}
+.Util-small-bold{
+	font-size: var(--h3-font-size);
+	font-weight: var(--font-semi-bold);
+}
+.Util-circle{
+    background:#2d7788;
+    border-radius: 25px;
+    width:25px;
+    height:25px;
+    text-align:center;
+}
+.Util-circle i{
+    line-height:25px;
+}
+
+/* Utility class end here */
+
+
+/* Code starts here */
+body{
+    background: #8e9192;
+    padding:10px;
+}
+.flex{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.flex-inline{
+    display:flex;
+    flex-direction: column;
+    width:97%;
+    /* border:2px solid black; */
+    background-color: #fff;
+    border-radius: 10px 10px 0px 0px;
+    padding:6px 10px;
+}
+.no-radius{
+    border-radius: 0px;
+}
+.no-radius-top{
+    border-radius: 0px 0px 10px 10px;
+}
+.flex-inline input{
+    padding:4px 0px;
+}
+button{
+    width:50px;
+    padding:3px 2px;
+    border-radius: 5px;
+}
+.mg-bottom{
+    margin-bottom: 2px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    /* border:2px solid black; */
+    margin-top:6rem;
+
+}
+.child{
+    
+    /* width:20%; */
+    height:150px;
+    /* border: 2px solid red; */
+    text-align: center;
+    color:#fff;
+    font-weight: bold;
+    
+}
