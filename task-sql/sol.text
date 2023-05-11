@@ -1,0 +1,27 @@
+1. To insert values in customers table.
+
+sol - Insert into Customers values(6, "Rishav", "Kumar", 21, "INDIA");
+
+2. To insert multiple values in customers table. 
+
+sol - Insert into Customers values(7, "Allen", "Parker", 21, "USA"), (8, "Roman", "Reings", 31, "USA");
+
+3. To get number of customers per country
+
+sol - select count(Customer_id), Country from Customers group by Country;
+
+4. To get the orders who have amount between 100 to 500.
+
+sol - select * from Orders where amount between 100 and 500;
+
+5. To get the first name and last name of customers who have bought Keypad.
+
+sol - select first_name, last_name from Customers where customer_id IN (select customer_id from Orders where item = "Keyboard");
+
+6. To get the name of the countries where shipping status is Pending.
+
+sol - select country from Customers where customer_id in (select customer_id from Orders where order_id in (select customer from Shippings where status = "Pending"));
+
+7.  To get the number of orders per customer.
+
+sol - select customer_id as Customer, count(customer_id) as "number of orders" from orders group by customer_id;
