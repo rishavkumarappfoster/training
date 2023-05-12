@@ -41,6 +41,9 @@
 /* Using this class wherever needed */
 /* Util name added before the class name, denotes that this classes are utility classes */
 
+.Util-h{
+    height:30px;
+}
 .Util-mg-top-1{
 	margin-top: var(--mb-1);
 }
@@ -49,6 +52,12 @@
 }
 .Util-mg-left-0-5{
 	margin-left: var(--mb-0-5);
+}
+.util-top-01{
+    margin-top:0.70rem;
+}
+.Util-mg-top-0-7{
+	margin-top: var(--mb-0-75);
 }
 .Util-mg-top-1{
 	margin-top: var(--mb-1);
@@ -85,6 +94,8 @@
 	flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding:0px 0px;
+    height:30px;
     /* border:2px solid blue; */
 }
 .Util-heading1{
@@ -95,29 +106,34 @@
    text-transform: uppercase;
    font-weight:700;
    color:#2d7788;
+   padding:0;
 }
 .Util-para{
-	font-size: var(--smaller-font-size);
+	font-size: var(--normal-font-size);
 	letter-spacing: 0px;
     line-height: 1.2rem;
     /* border: 2px solid black; */
 }
 .right-para{
     /* 		border: 2px solid black; */
-          font-size: var(--small-font-size);
+          font-size: 1.1rem;
         /* letter-spacing: 1px;
         line-height: 1.2rem; */
         font-weight: var(--font-semi-bold);
 }
 .Util-green{
-	font-size: var(--smaller-font-size);
+	font-size: var(--normal-font-size);
     font-weight: var(--font-semi-bold);
     color:#2d7788;
 }
 .Util-grey{
-    font-size: var(--small-font-size);
+    font-size: 1.1rem;
     font-weight: var(--font-semi-bold);
     color:grey;
+    height:20px;
+    /* border:2px solid black; */
+    margin-top:0;
+    padding:0;
 }
 .Util-designation{
    font-size: var(--h3-font-size);
