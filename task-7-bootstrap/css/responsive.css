@@ -1,0 +1,8 @@
+@media (max-width:370px){
+#right-content{
+    width:100%;
+}
+p{
+    font-size:0.8rem;
+}
+}
