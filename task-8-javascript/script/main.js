@@ -1,6 +1,3 @@
-console.log("java");
-
-
 
 // generating random colors
 const hexCharacters = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"]
@@ -27,11 +24,9 @@ function generateboxes(firstnumber, secondnumber){
     console.log(division);
     let modvalue = firstnumber%secondnumber;
     console.log(modvalue);
-    // let lengthoffirstbox = Number(division)+Number(modvalue);
     
     //add secondnumber of element on container
     let container = document.getElementsByClassName("container")[0];
-    // console.log(container);
 
     let html = "";
     for(let i = 0; i < secondnumber; i++){
@@ -98,7 +93,6 @@ function generateboxes(firstnumber, secondnumber){
 //calling function when someone clicks on button
 function func(e){
     e.preventDefault();
-    console.log("Hii Rishav");
     //reading data 
     document.getElementsByClassName("container")[0].innerHTML = "";
     try{
@@ -111,14 +105,10 @@ function func(e){
         if(Number(firstnumber) <= 0 || Number(secondnumber) <= 0){
            let html = `<h1>Number can never be negative</h1>`;
            container.innerHTML = html;
-        //    document.getElementById("firstn").value = "";
-        //    document.getElementById("secondn").value = "";
         }
         else if(Number(secondnumber) < Number(firstnumber)){
             generateboxes(firstnumber, secondnumber);
            
-        //    document.getElementById("firstn").value = "";
-        //    document.getElementById("secondn").value = "";
         }
         else{
             let html = `<h1>First number should never be smaller then second number</h1>`;

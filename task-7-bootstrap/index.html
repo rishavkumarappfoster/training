@@ -51,8 +51,8 @@
                     </form>
                 </div>
 
-                <div class="d-flex align-items-sm-center justify-content-sm-end  col-lg-3 flex-sm-row flex-column-reverse justify-content-end">
-                    <div class="d-flex align-items-center justify-content-end">
+                <div class="d-none d-sm-flex align-items-sm-center justify-content-sm-end  col-lg-3 flex-sm-row flex-column-reverse justify-content-end">
+                    <div class="d-flex align-items-center justify-content-end" id="navpart">
                         <div class="nav-item ms-2">
                             <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -81,7 +81,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="smallline"></div>
+                    <div class="secondnav smallline"></div>
                     <div class=" d-flex justify-content-end">
                         <img class="rounded-circle" src="img/rishav.jpg" alt="" width="30" height="30" />
                     </div>
@@ -92,7 +92,7 @@
 
         <!-- content -->
         <div class="d-flex">
-            <div class="d-flex left-container ps-3">
+            <div class="d-none d-sm-flex left-container ps-3">
                 <!-- left side icon -->
                 <div class="d-flex flex-column justify-content-start align-items-center mt-5">
                     <div class="mt-3 Util-circle">
@@ -140,26 +140,26 @@
             <div class="container-fluid p-3 rounded-5" id="right-content">
                 <div class=" container-fluid rounded-5 p-3 bg-light" style="border-radius: 40px;">
                     <div class="d-flex col-lg-12 justify-content-between">
-                        <p class="fs-lg-5 fs-6 fw-bolder ms-3">Projects</p>
-                        <p class="fs-lg-5 fs-6 fw-bolder me-3">December, 12</p>
+                        <p class="right-para ms-3">Projects</p>
+                        <p class="right-para me-3">December, 12</p>
                     </div>
-                    <div class="d-flex mx-3">
-                        <div class="d-inline-flex flex-column me-3 pb-0">
-                            <p class="fs-5 fw-bolder mb-0 pb-0">45</p>
+                    <div class="d-flex mx-3 flex-sm-row flex-column">
+                        <div class="d-inline-flex flex-sm-column flex-row me-3 pb-0">
+                            <p class="Util-para-b mb-0 pb-0">45</p>
                             <div class="d-flex">
-                                <p class="fs-lg-6 fs-6 text-size">In Progress</p>
+                                <p class="Util-para-a">In Progress</p>
                             </div>
                         </div>
-                        <div class="d-inline-flex flex-column me-3">
-                            <p class="fs-5 fw-bolder mb-0 pb-0">24</p>
+                        <div class="d-inline-flex flex-sm-column flex-row me-3">
+                            <p class="Util-para-b mb-0 pb-0">24</p>
                             <div class="d-flex">
-                                <p class="fs-lg-6 fs-6">Upcoming</p>
+                                <p class="Util-para-a">Upcoming</p>
                             </div>
                         </div>
-                        <div class="d-inline-flex flex-column me-3">
-                            <p class="fs-5 fw-bolder mb-0 pb-0">62</p>
+                        <div class="d-inline-flex flex-sm-column flex-row me-3">
+                            <p class="Util-para-b mb-0 pb-0">62</p>
                             <div class="d-flex">
-                                <p class="fs-lg-6 fs-6">Total Projects</p>
+                                <p class="Util-para-a">Total Projects</p>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                             <div class="col-lg-4 col-md-4 col-sm-6 col-12">
                                 <div class=" Util-color-1 p-3" style="border-radius: 40px;">
                                     <div class="Util-flex-row-sp mt-2 mx-2">
-                                        <span  class="Util-color-grey fs-6">December 10 2020</span>
+                                        <span  class="Util-color-grey">December 10 2020</span>
                                         <a href="" class="p-0 m-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
@@ -181,8 +181,8 @@
                                     </div>
                                     <div>
                                         <div class="d-flex flex-column justify-content-center align-items-center ms-1 mt-3">
-                                            <p class="fs-6 fw-bolder mb-1">Web Designing</p>
-                                            <p>Prototyping</p>
+                                            <p class="right-para mb-1">Web Designing</p>
+                                            <p class="Util-para">Prototyping</p>
                                         </div>
                                         <div class="straightline mb-2"></div>
                                         <span class="button-color-1 rounded-pill Util-badge">2 Days Left</span>
@@ -204,8 +204,8 @@
                                     </div>
                                     <div>
                                         <div class="d-flex flex-column justify-content-center align-items-center ms-1 mt-3">
-                                            <p class="fs-6 fw-bolder mb-1">Testing</p>
-                                            <p>Prototyping</p>
+                                            <p class="right-para mb-1">Testing</p>
+                                            <p class="Util-para">Prototyping</p>
                                         </div>
                                         <div class="straightline mb-2"></div>
                                         <span class=" mb-2 ms-2 rounded-pill Util-badge button-color-2">2 Days Left</span>
@@ -227,8 +227,8 @@
                                     </div>
                                     <div>
                                         <div class="d-flex flex-column justify-content-center align-items-center ms-1 mt-3">
-                                            <p class="fs-6 fw-bolder mb-1">Svg Animation</p>
-                                            <p>Prototyping</p>
+                                            <p class="right-para mb-1">Svg Animation</p>
+                                            <p class="Util-para">Prototyping</p>
                                         </div>
                                         <div class="straightline mb-2"></div>
                                         <span class="rounded-pill Util-badge Util-color-3-2 mb-2 ms-2">2 Days Left</span>
@@ -250,8 +250,8 @@
                                     </div>
                                     <div>
                                         <div class="d-flex flex-column justify-content-center align-items-center ms-1 mt-3">
-                                            <p class="fs-6 fw-bolder mb-1">UI Development</p>
-                                            <p>Prototyping</p>
+                                            <p class="right-para mb-1">UI Development</p>
+                                            <p class="Util-para">Prototyping</p>
                                         </div>
                                         <div class="straightline mb-2"></div>
                                         <span class="rounded-pill Util-badge Util-color-4-2 mb-2 ms-2">2 Days Left</span>
@@ -273,8 +273,8 @@
                                     </div>
                                     <div>
                                         <div class="d-flex flex-column justify-content-center align-items-center ms-1 mt-3">
-                                            <p class="fs-6 fw-bolder mb-1">Data Analysis</p>
-                                            <p>Prototyping</p>
+                                            <p class="right-para mb-1">Data Analysis</p>
+                                            <p class="Util-para">Prototyping</p>
                                         </div>
                                         <div class="straightline mb-2"></div>
                                         <span class="Util-color-5-2 mb-2 ms-2 rounded-pill Util-badge">2 Days Left</span>
@@ -296,8 +296,8 @@
                                     </div>
                                     <div>
                                         <div class="d-flex flex-column justify-content-center align-items-center ms-1 mt-3">
-                                            <p class="fs-6 fw-bolder mb-1">Web Designing</p>
-                                            <p>Prototyping</p>
+                                            <p class="right-para mb-1">Web Designing</p>
+                                            <p class="Util-para">Prototyping</p>
                                         </div>
                                         <div class="straightline mb-2"></div>
                                         <span class="rounded-pill Util-badge Util-color-6-2 mb-2 ms-2">2 Days Left</span>

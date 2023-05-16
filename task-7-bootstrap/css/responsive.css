@@ -1,8 +1,44 @@
-@media (max-width:370px){
-#right-content{
-    width:100%;
+@media (max-width:575px){
+    .Util-para-b{
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-right:1rem;
+    }
 }
+
+
+@media (max-width:400px){
 p{
     font-size:0.8rem;
+}
+/* navbar */
+form{
+    display: none;
+}
+#navpart{
+    display: none;
+}
+.Util-color-grey{
+    font-size:0.6rem;
+}
+.bi-three-dots-vertical{
+    width:10px;
+    height:10px;
+}
+.Util-para-a{
+    font-size:0.7rem;
+}
+
+.Util-para{
+	font-size: 0.7rem;
+}
+.Util-para-b{
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-right:1rem;
+}
+.right-para{
+          font-size: 0.8rem;
+        font-weight: bold;
 }
 }

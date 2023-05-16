@@ -156,18 +156,19 @@ body{
    font-weight:700;
    color:#2d7788;
 }
+.Util-para-a{
+    font-size:0.9rem;
+}
 .Util-para{
-	font-size: var(--smaller-font-size);
-	letter-spacing: 0px;
-    line-height: 1.2rem;
-    /* border: 2px solid black; */
+	font-size: 0.9rem;
+}
+.Util-para-b{
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 .right-para{
-    /* 		border: 2px solid black; */
-          font-size: var(--small-font-size);
-        /* letter-spacing: 1px;
-        line-height: 1.2rem; */
-        font-weight: var(--font-semi-bold);
+          font-size: 0.9rem;
+        font-weight: bold;
 }
 .Util-green{
 	font-size: var(--smaller-font-size);
@@ -229,6 +230,9 @@ body{
     position:absolute;
     top:5px;
     right:10px;
+}
+#navpart{
+    display: none;
 }
 
 

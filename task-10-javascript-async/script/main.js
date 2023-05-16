@@ -1,22 +1,14 @@
-console.log("fetching data");
-
-
 //fetching the data
-
-
 const getinfo = async ()=>{
-    console.log("getting info of all the user");
 
     try{
        
         let url = `https://gorest.co.in/public/v2/users`;
         const resonse = await fetch(url);
         const json = await resonse.json();
-        console.log(json);
         //show the data to the user
         let html = "";
         json.forEach(element => {
-            console.log(element);
             html+=`
              <div class="info-wrapper">
              <hr>
@@ -40,16 +32,12 @@ const getinfo = async ()=>{
         document.getElementsByClassName('content-container')[0].innerHTML = html;
 
 
-
         //paging
-
         var li = document.getElementById("content-container").getElementsByClassName("info-wrapper");
-       console.log(Array.from(li));
         var paginationNumber = document.getElementById("pagination-numbers");
         var display = 5;
         var count = 1;
         var buttonCount = Math.ceil(li.length/display);
-        console.log(buttonCount);
         for(let i = 1; i <= buttonCount; i++){
             var button = document.createElement("button");
             button.innerHTML = i;
@@ -82,7 +70,6 @@ const getinfo = async ()=>{
         buttonNumbers[count-1].classList.add("active");
         function buttonClick(){
             buttonNumbers[count-1].classList.remove("active"); 
-            console.log(this);
             if(this.innerHTML == buttonCount){
                 document.getElementById("next-button").setAttribute("disabled", true);
                 document.getElementById("prev-button").removeAttribute("disabled");
@@ -136,7 +123,6 @@ getinfo();
 
 
 const getdata = async (Ids)=>{
-   console.log(" I am clicked");
    document.getElementsByClassName("modal-body")[0].innerHTML = "";
    try{
 
@@ -169,8 +155,6 @@ const getdata = async (Ids)=>{
    }
 }
 
-
-// pagging
 
 
 
