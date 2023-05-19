@@ -7,11 +7,15 @@ var corsOptions = {
   origin: true
 };
 
+
 app.set('view engine', 'ejs');
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
+
+//adding public 
+app.use(express.static('public'));
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
@@ -35,6 +39,15 @@ db.sequelize.sync()
 app.get("/", (req, res) => {
   res.render('pages/index');
 });
+
+app.get("/user", (req, res) => {
+  res.render('pages/user');
+});
+
+app.get("/user/:id/project", (req, res) => {
+  res.render('pages/project');
+});
+
 
 require("./app/routes/tutorial.routes")(app);
 const router = require('./app/routes/user.routes.js');

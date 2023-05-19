@@ -55,6 +55,7 @@ const getOneUser = async (req, res)=>{
 const updateUser = async (req, res)=>{
     try{
         let id = req.params.id;
+        console.log(req.body);
         const user = await User.update(req.body, {where: {id:id}})
     
         res.status(200).send(user);
@@ -70,7 +71,7 @@ const deleteUser = async (req, res)=>{
     try{
         let id = req.params.id;
         await User.destroy({where: {id:id}})
-        res.status(200).send("User is deleted");
+        res.status(200).send('User is deleted');
     }
     catch(err){
         console.log(err.message); 
