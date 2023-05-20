@@ -1,4 +1,4 @@
-console.log("hello");
+
 //getting all users
 
 const getAllUser = async () => {
@@ -6,7 +6,7 @@ const getAllUser = async () => {
         let url = `http://localhost:3000/api/users`;
         const response = await fetch(url);
         const json = await response.json();
-        console.log(json);
+        // console.log(json);
 
 
         //show all user
@@ -18,7 +18,7 @@ const getAllUser = async () => {
             <div class="d-flex align-items-center flex-row">
                 <div class="me-2">
                     <!-- Button trigger modal -->
-                    <button onclick="showUserProject(${element.id})" type="button" class="btn btn-info">
+                    <button onclick="showUserProject(${element.id})" type="button" class="btn btn-primary">
                         Show User Project
                     </button>
                 </div>
@@ -48,7 +48,7 @@ const getAllUser = async () => {
 
                 <div class="me-2">
                     <!-- Button trigger modal -->
-                    <button onclick="updateUser(${element.id})" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button onclick="updateUser(${element.id})" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Update User
                     </button>
                     <!-- Modal -->
@@ -70,7 +70,7 @@ const getAllUser = async () => {
                                         </div>
                                         <div class="col-md-6">
                                           <label for="upemail" class="form-label">Email</label>
-                                          <input type="email" class="form-control" id="upemail" name="upemail" value="">
+                                          <input type="text" class="form-control" id="upemail" name="upemail" value="">
                                         </div>
                                         <div class="col-md-6">
                                             <label for="form-check" class="form-label">Gender</label>
@@ -102,8 +102,12 @@ const getAllUser = async () => {
                                                 </label>
                                             </div>
                                         </div>
+                                        <div class="col-md-6">
+                                          <label for="userid" class="form-label">Id</label>
+                                          <input type="text" class="form-control" id="userid" name="userid" value="${element.id}" disabled>
+                                        </div>
                                         <div class="col-12 d-flex justify-content-end">
-                                            <button onclick="updateUserDetail(${element.id})" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+                                            <button onclick="updateUserDetail()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
                                         </div>
                                       </form>
 
@@ -116,7 +120,7 @@ const getAllUser = async () => {
 
                 <div class="me-0">
                     <!-- Button trigger modal -->
-                    <button onclick="deleteUser(${element.id})" type="button" class="btn btn-info" data-bs-toggle="modal" id="deletebtn">
+                    <button onclick="deleteUser(${element.id})" type="button" class="btn btn-danger" data-bs-toggle="modal" id="deletebtn">
                         Delete User
                     </button>
                 </div>
@@ -147,10 +151,10 @@ const createUser = async ()=>{
         const Email = document.getElementById("email").value;
         const Gender = document.querySelector('input[name="gender"]:checked').value;
         const Status = document.querySelector('input[name="status"]:checked').value;
-        console.log(Name);
-        console.log(Email);
-        console.log(Gender);
-        console.log(Status);
+        // console.log(Name);
+        // console.log(Email);
+        // console.log(Gender);
+        // console.log(Status);
 
         let url = `http://localhost:3000/api/users/addUser`;
         fetch(url, {
@@ -177,7 +181,7 @@ const createUser = async ()=>{
                 
             // Displaying results to console
             .then(json => {
-             console.log(json)
+            //  console.log(json)
              const data = json;
              document.getElementById("log-form").reset();
              getAllUser();
@@ -203,6 +207,10 @@ const viewUser = async (id)=>{
 
         let html = `
         <div class="d-flex justify-content-between align-items-center flex-row">
+        <p class="fs-6 fw-bolder">ID : </p>
+        <p class="fs-6">${json.id}</p>
+        </div>
+        <div class="d-flex justify-content-between align-items-center flex-row">
         <p class="fs-6 fw-bolder">Name : </p>
         <p class="fs-6">${json.name}</p>
         </div>
@@ -219,7 +227,7 @@ const viewUser = async (id)=>{
         <p class="fs-6">${json.status}</p>
       </div>
         `;
-        console.log(json);
+        // console.log(json);
         let userfield = document.getElementById("viewuser");
         userfield.innerHTML = html;
         
@@ -240,6 +248,7 @@ const updateUser = async (id)=>{
 
     document.querySelector("#upname").value = json.name;
     document.querySelector("#upemail").value = json.email;
+    document.querySelector("#userid").value = json.id;
 
     const genderelements = document.querySelectorAll('input[name="upgender"]');
 
@@ -264,11 +273,12 @@ element.setAttribute('checked', 'checked');
 
 }
 //update user detail
-const updateUserDetail = async (id)=>{
+const updateUserDetail = async ()=>{
         
     try{ 
         const Name = document.querySelector("#upname").value;
         const Email = document.querySelector("#upemail").value;
+        const id = document.querySelector("#userid").value;
         const Gender = document.querySelector('input[name="upgender"]:checked').value;
         const Status = document.querySelector('input[name="upstatus"]:checked').value;
         console.log(Name);
@@ -347,4 +357,16 @@ const deleteUser = async (id)=>{
     }
 
     
+}
+
+//show user project
+const showUserProject = async (id)=>{
+     try{
+        
+        let url = `http://localhost:3000/user/${id}/project`; 
+        window.location.href = url;
+
+     }catch(err){
+        console.log(err);
+     }
 }
