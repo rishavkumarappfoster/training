@@ -13,7 +13,8 @@ const addProject = async (req, res)=>{
         const id = req.params.id;
         let info = {
             user_id: id,
-            name: req.body.name
+            name: req.body.name,
+            desc: req.body.desc
         }
         const project = await Project.create(info)
         res.status(200).send(project)

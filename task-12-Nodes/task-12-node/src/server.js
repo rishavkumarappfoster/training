@@ -1,5 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
+const cookieParser = require("cookie-parser");
+
 
 const app = express();
 
@@ -13,6 +16,7 @@ app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
+app.use(cookieParser());
 
 //adding public 
 app.use(express.static('public'));
@@ -50,8 +54,11 @@ app.get("/user/:id/project", (req, res) => {
 
 
 require("./app/routes/tutorial.routes")(app);
-const router = require('./app/routes/user.routes.js');
-app.use('/api/users', router);
+const userroute = require('./app/routes/user.routes.js');
+app.use('/api/users', userroute);
+
+const authuser = require('./app/routes/auth.routes.js');
+app.use('/api/auth', authuser);
 
 
 // set port, listen for requests

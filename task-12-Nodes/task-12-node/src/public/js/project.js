@@ -1,5 +1,7 @@
 // console.log("hello");
 
+
+
 const showAllProjectofUser = async()=>{
         //extracting product id from the url
         const url = window.location.href;
@@ -9,8 +11,8 @@ const showAllProjectofUser = async()=>{
 
         const response  = await fetch(url2);
         const json = await response.json();
-        // console.log(json);
-        // console.log(json.project);
+        console.log(json);
+        console.log(json.project);
 
         let createbutton = `
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createexampleModal">
@@ -34,15 +36,20 @@ const showAllProjectofUser = async()=>{
                           <label for="name" class="form-label">Project Name</label>
                           <input type="text" class="form-control" id="name" name="name" value="">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 d-none">
                           <label for="user_id" class="form-label">User ID</label>
-                          <input type="number" class="form-control" id="user_id" name="user_id" value="${json.id}" disabled>
+                          <input type="number" class="form-control" id="user_id" name="user_id" value="${json.id}">
+                        </div>
+
+                        <div class="mb-3">
+                          <label for="description" class="form-label">Description</label>
+                          <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
                         </div>
                         
                         <div class="col-12 d-flex justify-content-end">
                             <button onclick="createUserProject(${json.id})" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
                         </div>
-                      </form>
+                    </form>
                     <!-- from end -->
 
                 </div>
@@ -106,13 +113,17 @@ const showAllProjectofUser = async()=>{
                                   <label for="proname" class="form-label">Project Name</label>
                                   <input type="text" class="form-control" id="proname" name="proname" value="${element.name}">
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 d-none">
                                   <label for="prouser_id" class="form-label">User ID</label>
                                   <input type="text" class="form-control" id="prouser_id" name="prouser_id" value="${element.user_id}">
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 d-none">
                                   <label for="project_id" class="form-label">ID</label>
                                   <input type="text" class="form-control" id="project_id" name="project_id" value="${element.id}" disabled>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="description" class="form-label">Description</label>
+                                  <textarea class="form-control" id="prodesc" rows="3" name="prodesc"></textarea>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">
                                     <button onclick="saveUserProject()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
@@ -152,7 +163,9 @@ showAllProjectofUser();
 const createUserProject = async (id)=>{
     const Name = document.getElementById("name").value;
     const User_Id = document.getElementById("user_id").value;
-
+    const description = document.getElementById("desc").value;
+    
+    console.log(description);
     let url = `http://localhost:3000/api/users/${id}/addProject`;
     fetch(url, {
 
@@ -163,6 +176,7 @@ const createUserProject = async (id)=>{
         body: JSON.stringify({
             name:Name,
             user_id:User_Id,
+            desc:description
         }),
 
         // Adding headers to the request
@@ -179,6 +193,17 @@ const createUserProject = async (id)=>{
      const data = json;
      document.getElementById("log-form1").reset();
      showAllProjectofUser();
+     console.log(json);
+     document.getElementsByClassName("alertbox")[0].innerHTML=`
+     <div class="alert alert-success" role="alert">
+     <div class="d-flex align-items-center justify-content-between">
+       <p class="message mt-2">Product is Successfully added</p>
+       <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                       aria-label="Close"></button>
+     </div>
+                               
+   </div>
+     `;
     });
 }
 
@@ -191,17 +216,14 @@ const viewProject = async (id)=>{
 
         let html = `
         <div class="d-flex justify-content-between align-items-center flex-row">
-        <p class="fs-6 fw-bolder">ID : </p>
-        <p class="fs-6">${json.id}</p>
-        </div>
-        <div class="d-flex justify-content-between align-items-center flex-row">
         <p class="fs-6 fw-bolder">Project Name : </p>
         <p class="fs-6">${json.name}</p>
         </div>
         <div class="d-flex justify-content-between align-items-center flex-row">
-        <p class="fs-6 fw-bolder">User Id : </p>
-        <p class="fs-6">${json.user_id}</p>
-      </div>
+        <p class="fs-6 fw-bolder">Description : </p>
+        <p class="fs-6">${json.desc}</p>
+        </div>
+
         `;
         let userfield = document.getElementById("viewproject");
         userfield.innerHTML = html;
@@ -222,6 +244,7 @@ const updateProject = async (id)=>{
     document.querySelector("#proname").value = json.name;
     document.querySelector("#prouser_id").value = json.user_id;
     document.querySelector("#project_id").value = json.id;
+    document.querySelector("#prodesc").value = json.desc;
 
     }catch(err){
         console.log(err);
@@ -236,6 +259,7 @@ const saveUserProject = async ()=>{
         const Name = document.querySelector("#proname").value;
         const User_id = document.querySelector("#prouser_id").value;
         const id = document.querySelector("#project_id").value;
+        const Desc = document.querySelector("#prodesc").value;
         // console.log(Name);
         // console.log(User_id);
         // console.log(id);
@@ -250,7 +274,8 @@ const saveUserProject = async ()=>{
                 body: JSON.stringify({
                     id:id,
                     name:Name,
-                    user_id:User_id
+                    user_id:User_id,
+                    desc:Desc
                 }),
 
                 // Adding headers to the request
@@ -266,6 +291,16 @@ const saveUserProject = async ()=>{
             .then(json => {
             //  console.log(json)
              const data = json;
+             document.getElementsByClassName("alertbox")[0].innerHTML=`
+     <div class="alert alert-success" role="alert">
+     <div class="d-flex align-items-center justify-content-between">
+       <p class="message mt-2">Product is Successfully Updated</p>
+       <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                       aria-label="Close"></button>
+     </div>
+                               
+   </div>
+     `;
              showAllProjectofUser();
             });
 
@@ -298,6 +333,16 @@ const deleteProject = async (id)=>{
                        // Converting to JSON
                        .then(response => response.text()) //converting to JSON
             .then(json => {
+                document.getElementsByClassName("alertbox")[0].innerHTML=`
+     <div class="alert alert-success" role="alert">
+     <div class="d-flex align-items-center justify-content-between">
+       <p class="message mt-2">Product is Successfully Deleted</p>
+       <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                       aria-label="Close"></button>
+     </div>
+                               
+   </div>
+     `;
                 showAllProjectofUser();
             });
 

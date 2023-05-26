@@ -65,11 +65,12 @@ const updateUser = async (req, res)=>{
     }
 }
 
-//5. Delete user by id
+//5. Delete user and its all project
 
 const deleteUser = async (req, res)=>{
     try{
         let id = req.params.id;
+        await Project.destroy({where: {user_id:id}})
         await User.destroy({where: {id:id}})
         res.status(200).send('User is deleted');
     }
@@ -97,6 +98,9 @@ const getUserProject = async (req, res)=>{
         console.log(err.message); 
     }
 }
+
+
+
 
 module.exports = {
     addUser,

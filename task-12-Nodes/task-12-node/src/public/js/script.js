@@ -102,7 +102,7 @@ const getAllUser = async () => {
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 d-none">
                                           <label for="userid" class="form-label">Id</label>
                                           <input type="text" class="form-control" id="userid" name="userid" value="${element.id}" disabled>
                                         </div>
@@ -156,6 +156,35 @@ const createUser = async ()=>{
         // console.log(Gender);
         // console.log(Status);
 
+        // //check the user is already created using current mail
+        // let checkurl = `http://localhost:3000/api/users/checkbyemail?${Email}`;
+        // fetch(checkurl, {
+
+        //     // Adding method type
+        //     method: "POST",
+
+        //     // Adding body or contents to send
+        //     body: JSON.stringify({
+        //         email:Email
+        //     }),
+
+        //     // Adding headers to the request
+        //     headers: {
+        //         "Content-type": "application/json; charset=UTF-8"
+        //     }
+        // })
+
+        // // Converting to JSON
+        // .then(response => response.json())
+            
+        // // Displaying results to console
+        // .then(json => {
+        // //  console.log(json)
+        //  const data = json;
+        //  console.log(json);
+        // });
+
+
         let url = `http://localhost:3000/api/users/addUser`;
         fetch(url, {
 
@@ -184,13 +213,23 @@ const createUser = async ()=>{
             //  console.log(json)
              const data = json;
              document.getElementById("log-form").reset();
+             document.getElementsByClassName("alertbox")[0].innerHTML=`
+     <div class="alert alert-success" role="alert">
+     <div class="d-flex align-items-center justify-content-between">
+       <p class="message mt-2">User is Successfully added</p>
+       <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                       aria-label="Close"></button>
+     </div>
+                               
+   </div>
+     `;
              getAllUser();
             });
    
             
     }
     catch(err){
-        console.log(err.message);
+        console.log(err);
         document.getElementById("log-form").reset();
     }
 
@@ -206,10 +245,6 @@ const viewUser = async (id)=>{
         const json = await response.json(); 
 
         let html = `
-        <div class="d-flex justify-content-between align-items-center flex-row">
-        <p class="fs-6 fw-bolder">ID : </p>
-        <p class="fs-6">${json.id}</p>
-        </div>
         <div class="d-flex justify-content-between align-items-center flex-row">
         <p class="fs-6 fw-bolder">Name : </p>
         <p class="fs-6">${json.name}</p>
@@ -314,6 +349,16 @@ const updateUserDetail = async ()=>{
             .then(json => {
              console.log(json)
              const data = json;
+             document.getElementsByClassName("alertbox")[0].innerHTML=`
+             <div class="alert alert-success" role="alert">
+             <div class="d-flex align-items-center justify-content-between">
+               <p class="message mt-2">User is Successfully Updated</p>
+               <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                               aria-label="Close"></button>
+             </div>
+                                       
+           </div>
+             `;
              getAllUser();
             });
 
@@ -346,6 +391,16 @@ const deleteUser = async (id)=>{
                        .then(response => response.text()) //converting to JSON
             .then(json => {
                 console.log(json);
+                document.getElementsByClassName("alertbox")[0].innerHTML=`
+                <div class="alert alert-success" role="alert">
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="message mt-2">User is Successfully Deleted</p>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                  aria-label="Close"></button>
+                </div>
+                                          
+              </div>
+                `;
                 getAllUser();
             });
 

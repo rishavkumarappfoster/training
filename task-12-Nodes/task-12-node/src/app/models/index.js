@@ -22,6 +22,7 @@ db.sequelize = sequelize;
 db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.users = require("./user.model.js")(sequelize, Sequelize);
 db.projects = require("./project.model.js")(sequelize, Sequelize);
+db.auths = require("./auth.model.js")(sequelize, Sequelize);
 
 //  1 to many relationship
 db.users.hasMany(db.projects, {
