@@ -9,16 +9,30 @@ const Auth = db.auths;
 const validateUser = async (req, res, next)=>{
     try{
 
-        const Username = await Auth.findOne({where: {username:req.body.username}});
-        if(Username){
-            return res.status(409).send("This username is already in use")
-        }
-
         const Useremail = await Auth.findOne({where: {email:req.body.email}});
         if(Useremail){
             return res.status(409).send("This email is already in use, try with another mail");
         }
 
+        const findUserByUsername = await Auth.findOne({where: {username:req.body.username}});
+        if(findUserByUsername){
+            //if username is in use then create new unique username.
+            let uniqueUsername = req.body.username;
+            let usernameExists = true;
+
+            while(usernameExists){
+                const existingUser = await Auth.findOne({where:{username:uniqueUsername}});
+                if(existingUser){//if this username is already in use create new ones
+                    const randomString = Math.random().toString(36).substring(2, 8);
+                    uniqueUsername = `${req.body.username}-${randomString}`;
+                }
+                else{//finded unique user name
+                    usernameExists = false;
+                }
+            }
+            req.body.username = uniqueUsername;
+        }
+        
         next();
 
     }catch(err){

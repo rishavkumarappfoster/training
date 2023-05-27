@@ -46,7 +46,7 @@ const login = async (req, res, next)=>{
     try{
 
         let user = await Auth.findOne({where:{email:req.body.email}});
-        if(!user){
+        if(!user){//incorrect email
             return res.status(400).send("Incorrect email or password");
         }
         else{
@@ -54,7 +54,7 @@ const login = async (req, res, next)=>{
             if(isPasswordCorrect){
                 
                 let token = req.cookies.access_token;
-                if(!token){
+                if(!token){//if token already signout
                     token = jwt.sign({id:user.id, email:user.email}, process.env.secretKey, {
                         expiresIn:1 * 24 * 60 * 60 * 1000,
                     })
@@ -70,7 +70,7 @@ const login = async (req, res, next)=>{
                     })
                 }   
             }
-            else{
+            else{//incorrect password
                 return res.status(400).send("Incorrect email or password");
             }
         }
